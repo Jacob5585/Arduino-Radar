@@ -1,8 +1,8 @@
-// #include <Servo.h>
+#include <Servo.h>
 
-// Servo myservo;
+Servo myservo;
 
-// const int SERVO_PIN = ; 
+const int SERVO_PIN = ; 
 const int ECHO_PIN = 9;
 const int TRIG_PIN = 10;
 
@@ -18,14 +18,12 @@ float proximitySensor(){
 
   duration = pulseIn(ECHO_PIN, HIGH);
   cm = (duration/2) / 29.1;
-  // Serial.print(cm);
-  // Serial.println(" cm, ");
   return cm;
 }
 
 void setup() {
   Serial.begin(9600);
-  // myservo.attach(SERVO_PIN);
+  myservo.attach(SERVO_PIN);
   pinMode(ECHO_PIN, INPUT);
   pinMode(TRIG_PIN, OUTPUT);
   Serial.println("True");
@@ -33,7 +31,7 @@ void setup() {
 
 void loop() {
   for (pos = 0; pos <= 180; pos += 1){
-    // myservo.write(pos);
+    myservo.write(pos);
     distance = proximitySensor();
     delay(100);
     Serial.print(pos);
@@ -41,7 +39,7 @@ void loop() {
     Serial.println(distance);
   }
   for (pos = 180; pos >= 0; pos += -1){
-    // myservo.write(pos);
+    myservo.write(pos);
     distance = proximitySensor();
     delay(100);
     Serial.print(pos);
