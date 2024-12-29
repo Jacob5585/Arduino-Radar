@@ -8,7 +8,7 @@ The code to flash onto the arduino is under the radar folder.
 The python code for reading the data and creating the polar plot is under python
 
 pull repo with 
-`git clone clone Jacob5585/Arduino-Radar`
+```git clone https://github.com/Jacob5585/Arduino-Radar```
 
 Install the nessary python packages.
 ```
