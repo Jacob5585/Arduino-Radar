@@ -18,9 +18,9 @@ pull repo with
 
 Install the nessary python packages.
 ```
-python -m venv python/.env source
+python -m venv python/.env
 source python/.env/bin/activate
-pip install -r requirements.txt
+pip install -r python/requirements.txt
 ```
 
 run the python code with
@@ -30,4 +30,6 @@ python python/main.py
 ```
 
 The radar graph can be run on its own, since it creates its own data to work with when run directly
-```python python/radar_graph.py```
+```
+python python/radar_graph.py
+```
