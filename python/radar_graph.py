@@ -54,14 +54,13 @@ class PolarPlot:
     def update_plot(self, angle, dists):
         #update plot
         self.pols.set_data(self.theta, dists)
-        self.radar_sweep.set_data(np.repeat(angle * (np.pi / 180.0), 2), np.linspace(0.0, self.radius_max, 2))
+        self.radar_sweep.set_data(np.repeat(angle * (np.pi / 180.0), 2), np.linspace(0.0, self.radius_max, 2))  
 
         # Only redraw the updated parts of the plot
         self.axis.draw_artist(self.pols)
         self.axis.draw_artist(self.radar_sweep)
 
         # Redraw only the updated region of the canvas
-        self.fig.canvas.blit(self.axis.bbox)
         self.fig.canvas.flush_events()
 
         # Pause to allow for updates
