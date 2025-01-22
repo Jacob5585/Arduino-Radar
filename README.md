@@ -2,7 +2,7 @@
 Arduino-Radar Project
 
 This project runs an ultrasonic sensor and servo motor on a arduino uno.
-Than python reads the data from the arduino and create a polar plot for radar.
+Than python reads the data from the arduino and create a polar plot to repersent the sonar data.
 
 The code to flash onto the arduino is under the radar folder.
 Use the Arduino IDE to load the radar.ino file on to the arduino board
