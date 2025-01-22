@@ -34,4 +34,7 @@ The radar graph can be run on its own, since it creates its own data to work wit
 python python/radar_graph.py
 ```
 
-https://github.com/user-attachments/assets/9d452c04-90c3-42a6-aefe-05f801773178
+
+
+https://github.com/user-attachments/assets/9c6e6ceb-5aba-4ace-9b65-b3cb661d599a
+
