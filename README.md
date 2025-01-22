@@ -9,8 +9,6 @@ Use the Arduino IDE to load the radar.ino file on to the arduino board
 
 <insert diagram of arduino setup>
 
-<add in assembly code and commands to flash it onto the arduino>
-
 The python code for reading the data and creating the polar plot is under python
 
 pull repo with 
@@ -33,8 +31,3 @@ The radar graph can be run on its own, since it creates its own data to work wit
 ```
 python python/radar_graph.py
 ```
-
-
-
-https://github.com/user-attachments/assets/8b5b474b-c847-488f-9f53-db3ab7b478dd
-
