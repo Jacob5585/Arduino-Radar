@@ -31,3 +31,5 @@ The radar graph can be run on its own, since it creates its own data to work wit
 ```
 python python/radar_graph.py
 ```
+
+![arduino-radar](https://github.com/user-attachments/assets/397e3c30-be2b-43db-86ad-2838f0480c67)
