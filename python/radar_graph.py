@@ -25,7 +25,7 @@ class PolarPlot:
         self.angles = np.arange(0, 181, 1) # Degrees
         self.theta = self.angles * (np.pi / 180.0) # Radians
         self.pols, = self.axis.plot([],linestyle='',marker='o',markerfacecolor = 'w', markeredgecolor='#EFEFEF',markeredgewidth=1.0, markersize=10.0,alpha=0.9)
-        self.radar_sweep, = self.axis.plot([],color='w', linewidth=4.0)
+        self.radar_sweep, = self.axis.plot([],color='g', linewidth=4.0)
 
     def setup_plot(self):
         win = self.fig.canvas.manager.window 
@@ -51,10 +51,13 @@ class PolarPlot:
         # Remove toolbar
         self.fig.canvas.toolbar.pack_forget()
 
-    def update_plot(self, angle, dists):
+    def update_plot(self, angle, dists, distance):
+        radar_sweep_color = 'r' if distance <= self.radius_max * 0.5 else 'g'
+        self.radar_sweep.set_color(radar_sweep_color)  
+        
         #update plot
         self.pols.set_data(self.theta, dists)
-        self.radar_sweep.set_data(np.repeat(angle * (np.pi / 180.0), 2), np.linspace(0.0, self.radius_max, 2))  
+        self.radar_sweep.set_data(np.repeat(angle * (np.pi / 180.0), 2), np.linspace(0.0, distance, 2))  
 
         # Only redraw the updated parts of the plot
         self.axis.draw_artist(self.pols)
@@ -85,7 +88,7 @@ if __name__ == "__main__":
             distance += change
             
             polar_plot.dists[int(angle)] = distance
-            polar_plot.update_plot(angle, polar_plot.dists)
+            polar_plot.update_plot(angle, polar_plot.dists, distance)
             
             angle += increment
             if angle >= 180:
